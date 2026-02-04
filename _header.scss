@@ -1,8 +1,14 @@
 .header {
-    padding-top: 24px;
-    padding-bottom: 72px;
+    padding: 24px 10px 72px 10px;
 
     &_top {
+
+        &--burger {
+            display: none;
+            background-color: transparent;
+            border: none;
+        }
+
         width: 100%;
         max-width: 1136px;
         margin: 0 auto;
@@ -50,6 +56,8 @@
                 cursor: pointer;
             }
         }
+
+
     }
 
     &_home {
@@ -127,6 +135,7 @@
             max-width: 140px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             position: absolute;
             right: 40px;
             bottom: 40px;

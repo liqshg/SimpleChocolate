@@ -6,8 +6,7 @@
 }
 
 .header {
-  padding-top: 24px;
-  padding-bottom: 72px;
+  padding: 24px 10px 72px 10px;
 }
 .header_top {
   width: 100%;
@@ -17,6 +16,11 @@
   justify-content: space-between;
   padding-bottom: 32px;
   align-items: center;
+}
+.header_top--burger {
+  display: none;
+  background-color: transparent;
+  border: none;
 }
 .header_top_info {
   width: 100%;
@@ -120,6 +124,7 @@
   max-width: 140px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   right: 40px;
   bottom: 40px;
@@ -139,6 +144,7 @@
 
 .about {
   background-color: #1E1823;
+  padding: 0 10px;
 }
 .about_container {
   width: 100%;
@@ -186,6 +192,7 @@
 
 .chocolate-card {
   max-width: 270px;
+  height: 270px;
   position: relative;
   border-radius: 25px;
   overflow: hidden;
@@ -195,22 +202,25 @@
 .chocolate-card .card-front {
   width: 100%;
   height: 100%;
-  background-color: #ff982a;
+  background-color: #FD9222;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 28px;
   box-sizing: border-box;
 }
 .chocolate-card .card-front .chocolate-img {
-  width: 80%;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }
 .chocolate-card .card-front .title {
-  color: white;
-  font-family: sans-serif;
-  margin: 0;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -2%;
+  text-transform: uppercase;
+  color: #FFFFFF;
 }
 .chocolate-card .card-back {
   position: absolute;
@@ -219,7 +229,7 @@
   width: 100%;
   height: 100%;
   background-color: white;
-  padding: 30px 20px;
+  padding: 28px;
   box-sizing: border-box;
   transform: translateY(100%);
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -227,35 +237,117 @@
   flex-direction: column;
 }
 .chocolate-card .card-back .back-title {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  font-family: sans-serif;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  text-transform: uppercase;
+  color: #111111;
+  padding-bottom: 8px;
 }
 .chocolate-card .card-back .tags {
+  width: 100%;
+  max-width: 190px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 15px;
 }
 .chocolate-card .card-back .tags .tag {
-  font-size: 11px;
-  padding: 4px 12px;
-  border-radius: 15px;
-  font-family: sans-serif;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  padding: 6px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
 }
 .chocolate-card .card-back .tags .tag-filled {
-  background: #ff982a;
-  color: white;
+  background: #FD9222;
+  color: #FFFFFF;
+  width: 100%;
+  max-width: 81px;
 }
 .chocolate-card .card-back .tags .tag-outline {
-  border: 1px solid #ff982a;
-  color: #333;
+  border: 1px solid #FD9222;
+  color: #111111;
+  width: 100%;
+  max-width: 95px;
 }
 .chocolate-card .card-back .description {
+  font-family: Montserrat;
+  font-weight: 400;
   font-size: 14px;
-  line-height: 1.6;
-  color: #666;
-  font-family: sans-serif;
+  line-height: 18px;
+  letter-spacing: -2%;
+  color: #111111;
 }
 .chocolate-card:hover .card-back {
   transform: translateY(0);
+}
+
+@media (max-width: 1050px) {
+  main .about_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 704px;
+    gap: 32px;
+  }
+  main .about_container_card--line {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  body .header_top_info {
+    display: none;
+  }
+  body .header_top--social {
+    display: none;
+  }
+  body .header_top--burger {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  body .header_home {
+    padding-top: 715px;
+    background-image: url("./img/bg-home-tablet.png");
+  }
+  body .header_home--line {
+    display: none;
+  }
+  main .about_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: 335px;
+  }
+}
+@media (max-width: 650px) {
+  body .header_home {
+    padding-top: 395px;
+  }
+  body .header_home_container {
+    padding: 0 20px 80px 20px;
+  }
+  body .header_home_absolute {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+@media (max-width: 375px) {
+  body .header_home {
+    padding-top: 715px;
+    background-image: url("./img/bg-home-tablet.png");
+  }
+  body .header_home--line {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
